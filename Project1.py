@@ -67,9 +67,7 @@ def board_find_groups(board):
 def board_remove_group(board,group):
     col_check = []
     clone = board
-    for i in len(group):
-        l = pos_l(group[i])
-        c = pos_c(group[i])
+    for l, c in group:
         if (l != 0) and (color((clone[l-1])[c])):
             (clone[l])[c] = (clone[l-1])[c]
             (clone[l-1])[c] = 0
