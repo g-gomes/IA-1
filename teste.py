@@ -118,13 +118,14 @@ for j in range(len(clone)):
 """
 
 def auxColDel(board):
+    newboard = board
     lastline = board[len(board)-1]
     for i in range(len(lastline)):
 	if (lastline[i] == 0) and (i != (len(lastline)-1)):
 	    for j in range(len(board)-1):
 		newboard[j][i] = board[j][i+1]
 		newboard[j][i+1] = 0
-	elif i != (len(lastline)-1):
+	elif i == (len(lastline)-1):
 	    return newboard
     auxColDel(newboard)
 
