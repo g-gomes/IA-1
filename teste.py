@@ -128,5 +128,22 @@ def auxColDel(board):
 	elif i == (len(lastline)-1):
 	    return newboard
     auxColDel(newboard)
+	
+class sg_state:
+	_tabuleiro = []
+	def __init__(self, tabuleiro):
+		self._tabuleiro = tabuleiro
+
+def auxColDel(board):
+	newboard = board
+	lastline = board[len(board)-1]
+	for i in range(len(lastline)):
+		if(lastline[i] == 0) and (i != (len(lastline)-1)):
+			for j in range(len(board)-1):
+				newboard[j][i] = board[j][i+1]
+				newboard[j][i+1] = 0
+		elif i == (len(lastline)-1):
+			return newboard
+	auxColDel(newboard)
 
 #class sg_state(tabuleiro)
