@@ -116,7 +116,7 @@ for j in range(len(clone)):
                 (clone[m])[l+1] = 0
                 col_check[l+1] = (len(clone)-1)
 """
-
+"""
 def auxColDel(board):
     newboard = board
     lastline = board[len(board)-1]
@@ -133,7 +133,8 @@ class sg_state:
 	_tabuleiro = []
 	def __init__(self, tabuleiro):
 		self._tabuleiro = tabuleiro
-
+"""
+"""
 def auxColDel(board):
 	newboard = board
 	lastline = board[len(board)-1]
@@ -147,3 +148,17 @@ def auxColDel(board):
 	auxColDel(newboard)
 
 #class sg_state(tabuleiro)
+"""
+
+def lineFall(board):
+    last_line_index = len(board)-1
+    temp_array = []
+    count = 0
+    for j in len(board):
+	temp_array.append(board[count][j])
+	if count == len(board):
+	    count += 1
+	    break
+    
+	
+    
