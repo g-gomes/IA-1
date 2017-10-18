@@ -117,4 +117,15 @@ for j in range(len(clone)):
                 col_check[l+1] = (len(clone)-1)
 """
 
-class sg_state(tabuleiro)
+def auxColDel(board):
+    lastline = board[len(board)-1]
+    for i in range(len(lastline)):
+	if (lastline[i] == 0) and (i != (len(lastline)-1)):
+	    for j in range(len(board)-1):
+		newboard[j][i] = board[j][i+1]
+		newboard[j][i+1] = 0
+	elif i != (len(lastline)-1):
+	    return newboard
+    auxColDel(newboard)
+
+#class sg_state(tabuleiro)
